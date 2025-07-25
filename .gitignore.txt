@@ -1,0 +1,13 @@
+# Node & Angular
+node_modules/
+dist/
+.env
+
+# Java & Spring Boot
+target/
+*.iml
+*.class
+*.log
+*.jar
+/.idea
+/.vscode
