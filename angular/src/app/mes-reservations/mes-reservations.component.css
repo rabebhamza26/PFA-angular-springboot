@@ -1,0 +1,14 @@
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+input.form-control {
+  min-width: 150px;
+}
+
+.statut-cell {
+    color: black;
+  }
+  

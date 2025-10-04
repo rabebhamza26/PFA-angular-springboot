@@ -1,0 +1,62 @@
+<button
+routerLink="/dashboardemployee"
+class="btn btn-outline-secondary btn-sm me-2"
+>
+<i class="bi bi-arrow-left me-1"></i>
+</button>
+<div class="container my-4">
+    
+
+  <h3 class="mb-4 text-primary">🔍 Consulter les disponibilités des salles</h3>
+
+  <div class="row g-3 mb-4">
+    <div class="col-md-6">
+      <label class="form-label fw-semibold">
+        📅 Date Début:
+        <input
+          type="datetime-local"
+          class="form-control"
+          [(ngModel)]="dateDebut"
+        />
+      </label>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label fw-semibold">
+        📅 Date Fin:
+        <input
+          type="datetime-local"
+          class="form-control"
+          [(ngModel)]="dateFin"
+        />
+      </label>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle shadow-sm">
+      <thead class="table-light text-center">
+        <tr>
+          <th>Nom</th>
+          <th>Capacité</th>
+          <th>Équipements</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let salle of salles">
+          <td>{{ salle.nom }}</td>
+          <td>{{ salle.capacite }}</td>
+          <td>{{ salle.equipements }}</td>
+          <td class="text-center">
+            <button
+              class="btn btn-outline-primary btn-sm"
+              (click)="verifierDisponibilite(salle)"
+            >
+              Vérifier Disponibilité
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

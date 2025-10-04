@@ -1,0 +1,72 @@
+/* Styles personnalisés */
+.admin-dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-header {
+  height: 60px;
+  z-index: 1030;
+}
+
+.sidebar {
+  min-height: calc(100vh - var(--header-height));
+  
+
+  background-color: var(--dark-bg);
+  transition: all var(--transition-speed) ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.nav-link {
+    transition: all var(--transition-speed) ease;
+    border-left: 3px solid transparent;
+    margin: 0.25rem 1rem;
+    border-radius: 0.375rem;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(5px);
+  }
+  
+  .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-left: 3px solid var(--primary-color);
+    font-weight: 500;
+  }
+  
+  .nav-link i {
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  .nav-link:hover i {
+    transform: scale(1.1);
+  }
+  
+
+.main-content {
+  min-height: calc(100vh - 60px);
+  padding-top: 20px;
+}
+
+.welcome-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.sidebar-stats {
+  background-color: rgba(0, 0, 0, 0.2);
+}

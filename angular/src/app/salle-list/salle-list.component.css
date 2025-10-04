@@ -1,0 +1,17 @@
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table td {
+  padding: 0.75rem;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+}
+
+.btn i {
+  margin-right: 4px;
+}

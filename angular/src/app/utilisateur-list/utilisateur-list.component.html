@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <button
+      routerLink="/dashboardadmin"
+      class="btn btn-outline-secondary btn-sm me-2"
+    >
+      <i class="bi bi-arrow-left me-1"></i>
+    </button>
+    <div>
+      <h2 class="mb-0 d-inline-block">Liste des utilisateurs</h2>
+    </div>
+    <button
+      routerLink="/AjouterEmployee"
+      routerLinkActive="active"
+      class="btn btn-primary btn-sm"
+    >
+      <i class="bi bi-person-plus-fill me-1"></i> Ajouter Employé
+    </button>
+  </div>
+
+  <div class="table-responsive">
+    <table
+      class="table table-hover table-bordered align-middle shadow-sm rounded"
+    >
+      <!-- Le reste de votre tableau reste inchangé -->
+      <thead class="table-dark text-center">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Email</th>
+          <th scope="col">Rôle</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let utilisateur of utilisateurs" class="text-center">
+          <td>{{ utilisateur.id }}</td>
+          <td>{{ utilisateur.nomUtilisateur }}</td>
+          <td>{{ utilisateur.email }}</td>
+          <td>{{ utilisateur.role }}</td>
+          <td>
+            <div class="d-flex justify-content-center gap-2">
+              <button
+                class="btn btn-warning btn-sm"
+                (click)="modifierUtilisateur(utilisateur)"
+              >
+                <i class="bi bi-pencil-fill"></i> Modifier
+              </button>
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="supprimerUtilisateur(utilisateur.id!)"
+              >
+                <i class="bi bi-trash-fill"></i> Supprimer
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

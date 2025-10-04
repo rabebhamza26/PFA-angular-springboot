@@ -1,0 +1,17 @@
+.container {
+    background-color: #f8f9fa;
+  }
+  
+  h2 {
+    font-weight: 600;
+  }
+  
+  .table td,
+  .table th {
+    vertical-align: middle;
+  }
+  
+  .badge {
+    font-size: 0.9rem;
+  }
+  

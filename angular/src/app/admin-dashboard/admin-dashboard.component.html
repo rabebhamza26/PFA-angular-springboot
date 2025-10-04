@@ -1,0 +1,200 @@
+<div class="admin-dashboard">
+  <div class="admin-dashboard">
+    <div class="admin-dashboard">
+      <header class="admin-header bg-dark text-white shadow-sm sticky-top">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-between align-items-center py-3">
+            <h1 class="dashboard-title mb-0 fs-4 fw-bold">
+              <i class="bi bi-speedometer2 me-2"></i>Espace Admin - Dashboard
+            </h1>
+            <div>
+              <button class="btn btn-outline-light" (click)="logout()">
+                <i class="bi bi-box-arrow-right me-1"></i>Déconnexion
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container-fluid px-0">
+        <div class="row g-0">
+          <div class="col-md-2 sidebar bg-dark text-white">
+            <div class="sticky-top pt-3" style="top: 60px">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-white py-3 d-flex align-items-center"
+                    routerLink="/listeEmployee"
+                    routerLinkActive="active"
+                  >
+                    <i class="bi bi-people-fill me-3 fs-5"></i>
+                    <span>Gestion des Employés</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-white py-3 d-flex align-items-center"
+                    routerLink="/listeSalle"
+                    routerLinkActive="active"
+                  >
+                    <i class="bi bi-building me-3 fs-5"></i>
+                    <span>Gestion des Salles</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-white py-3 d-flex align-items-center"
+                    routerLink="/listereservations"
+                    routerLinkActive="active"
+                  >
+                    <i class="bi bi-calendar-check me-3 fs-5"></i>
+                    <span>Gestion des Réservations</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-white py-3 d-flex align-items-center"
+                    routerLink="/historiquenotifications"
+                    routerLinkActive="active"
+                  >
+                    <i class="bi bi-bell-fill me-3 fs-5"></i>
+                    <span>Notifications</span>
+                    <span class="badge bg-danger rounded-pill ms-auto">3</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-10 main-content bg-light">
+            <main class="admin-main p-4">
+              <div *ngIf="!routerOutlet?.isActivated" class="welcome-card mb-4">
+                <div class="card bg-primary text-white shadow">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div>
+                        <h2 class="card-title fs-3 mb-2">Bienvenue, Admin</h2>
+                      </div>
+                      <i class="bi bi-graph-up-arrow fs-1 opacity-25"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-section">
+                <router-outlet></router-outlet>
+
+                <div *ngIf="!routerOutlet?.isActivated" class="default-content">
+                  <div class="card shadow-sm">
+                    <div class="card-header bg-white border-bottom">
+                      <h3 class="card-title mb-0">
+                        Tableau de bord administratif
+                      </h3>
+                    </div>
+                    <div class="card-body">
+                      <div class="row mt-4">
+                        <div class="col-md-6 mb-4">
+                          <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center mb-3">
+                                <div
+                                  class="bg-primary bg-opacity-10 p-3 rounded me-3"
+                                >
+                                  <i
+                                    class="bi bi-people-fill text-primary fs-4"
+                                  ></i>
+                                </div>
+                                <h5 class="mb-0">Gestion Des Employés</h5>
+                              </div>
+
+                              <a
+                                routerLink="/listeEmployee"
+                                class="btn btn-sm btn-outline-primary"
+                                >Gérer les employés</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                          <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center mb-3">
+                                <div
+                                  class="bg-success bg-opacity-10 p-3 rounded me-3"
+                                >
+                                  <i
+                                    class="bi bi-building text-success fs-4"
+                                  ></i>
+                                </div>
+                                <h5 class="mb-0">Gestion des Salles</h5>
+                              </div>
+
+                              <a
+                                routerLink="/listeSalle"
+                                class="btn btn-sm btn-outline-success"
+                                >Gérer les salles</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                          <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center mb-3">
+                                <div
+                                  class="bg-info bg-opacity-10 p-3 rounded me-3"
+                                >
+                                  <i
+                                    class="bi bi-calendar-check text-info fs-4"
+                                  ></i>
+                                </div>
+                                <h5 class="mb-0">Gestion des Réservations</h5>
+                              </div>
+
+                              <a
+                                routerLink="/listereservations"
+                                class="btn btn-sm btn-outline-info"
+                                >Gérer les réservations</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                          <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center mb-3">
+                                <div
+                                  class="bg-warning bg-opacity-10 p-3 rounded me-3"
+                                >
+                                  <i
+                                    class="bi bi-bell-fill text-warning fs-4"
+                                  ></i>
+                                </div>
+                                <h5 class="mb-0">Notifications</h5>
+                              </div>
+
+                              <a
+                                routerLink="/historiquenotifications"
+                                class="btn btn-sm btn-outline-warning"
+                                >Voir notifications</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

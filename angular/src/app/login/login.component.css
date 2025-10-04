@@ -1,0 +1,162 @@
+/* login.component.css */
+.card {
+  border-radius: 15px;
+  border: none;
+  background-color: linear-gradient(135deg, #004080 0%, #002147 100%);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px; /* Largeur maximale pour les grands écrans */
+  margin: 0 auto; /* Centrage horizontal */
+  transition: all 0.3s ease;
+}
+
+.container-fluid {
+  background: linear-gradient(135deg, #004080 0%, #002147 100%);
+  min-height:100vh;
+  animation: gradientShift 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Adaptation pour les grands écrans */
+@media (min-width: 1200px) {
+  .card {
+    padding: 2rem;
+    max-width: 500px;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-control {
+    padding: 14px;
+    font-size: 1rem;
+  }
+  
+  .btn-primary {
+    padding: 14px;
+    font-size: 1.05rem;
+  }
+}
+
+.card-title {
+  color: #3f51b5;
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #3f51b5;
+  border: none;
+  padding: 12px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-primary:hover {
+  background-color: #303f9f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.form-control {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.form-control:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 0.25rem rgba(63, 81, 181, 0.15);
+}
+
+.login-icon {
+  background: linear-gradient(135deg, #3f51b5 0%, #2196f3 100%);
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(63, 81, 181, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.login-icon:hover {
+  transform: scale(1.05);
+}
+
+.login-icon svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+
+.alert {
+  border-radius: 8px;
+  border: none;
+  padding: 12px 15px;
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  border-right: none;
+  padding: 0 15px;
+}
+
+/* Améliorations pour les très grands écrans */
+@media (min-width: 1600px) {
+  .card {
+    max-width: 550px;
+    padding: 2.5rem;
+  }
+  
+  .card-title {
+    font-size: 2.2rem;
+  }
+  
+  .form-control, .btn-primary {
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+  
+  .login-icon {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 25px;
+  }
+  
+  .login-icon svg {
+    width: 45px;
+    height: 45px;
+  }
+}
+/* Style pour SweetAlert */
+.swal2-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #3f51b5 !important;
+}
+
+.swal2-confirm {
+  background-color: #3f51b5 !important;
+}
+
+.swal2-error {
+  border-color: #f44336 !important;
+  color: #f44336 !important;
+}

@@ -1,0 +1,70 @@
+/* Formulaire centré avec padding doux */
+.container {
+  padding-top: 50px;
+}
+
+/* Carte du formulaire */
+.card {
+  border-radius: 16px;
+  border: 1px solid #dee2e6;
+  background-color: #ffffff;
+}
+
+/* Titre */
+.card h4 {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Champs de formulaire */
+.form-control,
+.form-select {
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+  outline: none;
+}
+
+/* Labels */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Boutons */
+.btn-primary {
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-weight: 500;
+  background-color: #0d6efd;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.btn-secondary {
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-weight: 500;
+  background-color: #6c757d;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5c636a;
+}
+
+/* Espacement du bas du formulaire */
+form {
+  margin-bottom: 10px;
+}

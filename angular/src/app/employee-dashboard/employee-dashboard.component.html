@@ -1,0 +1,72 @@
+<header class="employee-header bg-dark text-white shadow-sm sticky-top">
+  <div class="container-fluid">
+    <div
+      class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3"
+    >
+      <h1 class="dashboard-title mb-3 mb-md-0 fs-4 fw-bold">
+        <i class="bi bi-person-badge me-2"></i>Tableau de Bord Employé
+      </h1>
+
+      <div class="d-flex align-items-center gap-3">
+        <nav class="d-flex flex-wrap justify-content-center gap-2"></nav>
+
+        <button class="btn btn-danger btn-hover-scale ms-2" (click)="logout()">
+          <i class="bi bi-box-arrow-right me-2"></i>Déconnexion
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="employee-main bg-light min-vh-100 py-4">
+  <div class="container">
+    <router-outlet></router-outlet>
+
+    <!-- Contenu par défaut -->
+    <div *ngIf="!routerOutlet?.isActivated" class="default-content mt-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body text-center py-5">
+          <i class="bi bi-house-door text-primary display-4 mb-3"></i>
+          <h2 class="mb-3">Bienvenue sur votre espace employé</h2>
+          <p class="text-muted mb-4">
+            Sélectionnez une option ci-dessous pour commencer
+          </p>
+
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a
+              routerLink="/consulterdisponibilite"
+              class="btn btn-primary btn-lg btn-hover-scale mx-2"
+            >
+              <i class="bi bi-calendar-check me-2"></i>Voir les disponibilités
+            </a>
+
+            <a
+              routerLink="/demandereservations"
+              class="btn btn-success btn-lg btn-hover-scale mx-2"
+            >
+              <i class="bi bi-pencil-square me-2"></i>Faire une réservation
+            </a>
+
+            <a
+              routerLink="/mesreservation"
+              class="btn btn-info btn-lg btn-hover-scale mx-2"
+            >
+              <i class="bi bi-list-check me-2"></i>Mes Réservations
+            </a>
+
+            <a
+              routerLink="/notifications"
+              class="btn btn-warning btn-lg btn-hover-scale position-relative mx-2"
+            >
+              <i class="bi bi-bell-fill me-2"></i>Notifications
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

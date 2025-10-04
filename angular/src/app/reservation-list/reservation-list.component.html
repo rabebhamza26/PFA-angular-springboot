@@ -1,0 +1,62 @@
+<div class="container mt-4">
+  <button
+      routerLink="/dashboardadmin"
+      class="btn btn-outline-secondary btn-sm me-2"
+    >
+      <i class="bi bi-arrow-left me-1"></i>
+    </button>
+  <h2 class="mb-4 text-center">Liste des Réservations</h2>
+
+  <table class="table table-hover table-bordered align-middle text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Date Début</th>
+        <th>Date Fin</th>
+        <th>Statut</th>
+        <th>Utilisateur</th>
+        <th>Salle</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let res of reservations">
+        <td>{{ res.id }}</td>
+        <td>{{ res.dateDebut | date : "dd/MM/yyyy, h:mm a" }}</td>
+        <td>{{ res.dateFin | date : "dd/MM/yyyy, h:mm a" }}</td>
+        <td>
+          <span
+            class="badge"
+            [ngClass]="{
+              'bg-success': res.statut === 'CONFIRMEE',
+              'bg-danger': res.statut === 'ANNULEE',
+              'bg-warning text-dark': res.statut === 'EN_ATTENTE'
+            }"
+          >
+            {{ res.statut }}
+          </span>
+        </td>
+        <td>{{ res.utilisateur.id }}</td>
+        <td>{{ res.salle.id }}</td>
+        <td>
+          <button
+            class="btn btn-sm btn-success me-1"
+            (click)="confirmerReservation(res.id!)"
+            [disabled]="res.statut === 'CONFIRMEE'"
+          >
+            <i class="bi bi-check-circle-fill"></i> Confirmer
+          </button>
+
+          <button
+            class="btn btn-sm btn-danger"
+            (click)="annulerReservation(res.id!)"
+            [disabled]="res.statut === 'ANNULEE'"
+          >
+            <i class="bi bi-x-circle-fill"></i> Annuler
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
